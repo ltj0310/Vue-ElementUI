@@ -1,0 +1,20 @@
+@import './variable.less';
+
+.el-scrollbar {
+  height: calc(100% - @navHeight);
+  .scrollbar-wrapper {
+    overflow-x: hidden !important;
+      height: 100%;
+      .el-scrollbar__view {
+      height: 100%;
+    }
+  }
+}
+
+.el-menu--collapse {
+  min-height: 100%;
+  border-color: @sidebarBg;
+  .el-menu--display, .el-menu--display+.el-submenu__icon-arrow{
+    display: none;
+  }
+}
