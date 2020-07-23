@@ -40,3 +40,27 @@ export function param2Obj(url) {
       '"}'
   )
 }
+/**
+ * 对象深复制
+ */
+export const _deepClone = (source) => {
+  if (typeof source === 'object') {
+    let target = Array.isArray(source) ? [] : {}
+    for (let key in source) {
+      if (typeof source[key] === 'object') {
+        target[key] = _deepClone(source[key])
+      } else {
+        target[key] = source[key]
+      }
+    }
+    return target
+  } else {
+    return source
+  }
+}
+/**
+ * 格式化金钱
+ */
+export const format = (str) => {
+  return str.replace(/(\d)(?=(?:\d{3})+$)/g, '$1,')
+}
